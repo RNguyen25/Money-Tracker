@@ -33,31 +33,6 @@ listDict = {
 }
 
 def hash(exp):
-  '''month = int(exp.getMonth())
-  if month == 1:
-    hashMonth(exp, expenses1)
-  if month == 2:
-    hashMonth(exp, expenses2)
-  if month == 3:
-    hashMonth(exp, expenses3)
-  if month == 4:
-    hashMonth(exp, expenses4)
-  if month == 5:
-    hashMonth(exp, expenses5)
-  if month == 6:
-    hashMonth(exp, expenses6)
-  if month == 7:
-    hashMonth(exp, expenses7)
-  if month == 8:
-    hashMonth(exp, expenses8)
-  if month == 9:
-    hashMonth(exp, expenses9)
-  if month == 10:
-    hashMonth(exp, expenses10)
-  if month == 11:
-    hashMonth(exp, expenses11)
-  if month == 12: 
-    hashMonth(exp, expenses12)'''
   list = listDict.get(int(exp.getMonth()))
   hashMonth(exp,list)
 
@@ -90,19 +65,17 @@ def addExpense():
     c = input("Ok what is the cost? (xx.xx)   \n")
     #category loop using dictionary
     print("What category does it lie under?   \n" + sep)
-    print(categoryDict)
-    while(True):  
-      while(True):
-        cat = input()
-        try:
-          cat = categoryDict.get(int(cat))
+    print(categoryDict) 
+    while(True):
+      cat = input()
+      try:
+        cat = categoryDict.get(int(cat))
+        if(cat!=None):
           break
-        except:
-          print("Please put in a number")
-      if(cat != None):
-        break
-      else:
-        print("Please put in a number 1-6")
+        else:
+          print("Please put in a number 1-6")
+      except:
+        print("Please put in a number")
     e1 = expense(da,n, c, cat)
     hash(e1)
 
@@ -124,31 +97,6 @@ monthDict = {
 def trackExpense():
   print("\nwhat month of expense would you like to see?\n" + sep)
   print(monthDict)
-  '''intMonth = int(month)
-  if intMonth == 1:
-    trackExpenseMonth(expenses1)
-  if intMonth == 2:
-    trackExpenseMonth(expenses2)
-  if intMonth == 3:
-    trackExpenseMonth(expenses3)
-  if intMonth == 4:
-    trackExpenseMonth(expenses4)
-  if intMonth == 5:
-    trackExpenseMonth(expenses5)
-  if intMonth == 6:
-    trackExpenseMonth(expenses6)
-  if intMonth == 7:
-    trackExpenseMonth(expenses7)
-  if intMonth == 8:
-    trackExpenseMonth(expenses8)
-  if intMonth == 9:
-    trackExpenseMonth(expenses9)
-  if intMonth == 10:
-    trackExpenseMonth(expenses10)
-  if intMonth == 11:
-    trackExpenseMonth(expenses11)
-  if intMonth == 12: 
-    trackExpenseMonth(expenses12)'''
   while(True):
     month = input()
     try:
