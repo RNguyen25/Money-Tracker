@@ -1,6 +1,6 @@
 from mainFunctions import trackExpense
 from mainFunctions import addExpense
-import test
+import testData
 sep ="-------------------------"
 def main():
     whatDo = input("\nWhat do you want to do?\n" + sep + "\nTrack, Add\n")
