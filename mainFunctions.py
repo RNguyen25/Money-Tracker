@@ -34,9 +34,6 @@ listDict = {
 
 def hash(exp):
   list = listDict.get(int(exp.getMonth()))
-  hashMonth(exp,list)
-
-def hashMonth(exp, list):
   head = list[exp.getDay()] 
   if head == None:
     list[exp.getDay()] = exp
@@ -98,6 +95,7 @@ monthDict = {
 def trackExpense():
   print("\nwhat month of expense would you like to see?\n" + sep)
   print(monthDict)
+  #to put in valid month number
   while(True):
     month = input()
     try:
@@ -108,19 +106,16 @@ def trackExpense():
         print("Please type in a valid number")
     except:
       print("Please type in a number")
-  trackExpenseMonth(list)
-  
-def trackExpenseMonth(list):
-  #while (True):
-    i = input("\nwhat day of expense would you like to see\n")
-    curr = list[int(i)]
-    print("\nHere is the all the expenses on " + i + "\n" + sep)
-    while (True):
-      print(curr)
-      try:
-        if curr.getNext() != "":
-          curr = curr.getNext()
-        else:
-          break
-      except:
+  i = input("\nwhat day of expense would you like to see\n")
+  curr = list[int(i)]
+  print("\nHere is the all the expenses on " + i + "\n" + sep)
+  #prints all expenses in a day
+  while (True):
+    print(curr)
+    try:
+      if curr.getNext() != "":
+        curr = curr.getNext()
+      else:
         break
+    except:
+      break
