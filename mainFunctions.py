@@ -17,7 +17,7 @@ expenses12 = np.empty(32, expense)
 
 #hashcode 1
 #months dictionary
-monthsDict = {
+listDict = {
   1: expenses1,
   2: expenses2,
   3: expenses3,
@@ -58,7 +58,7 @@ def hash(exp):
     hashMonth(exp, expenses11)
   if month == 12: 
     hashMonth(exp, expenses12)'''
-  list = monthsDict.get(int(exp.getMonth()))
+  list = listDict.get(int(exp.getMonth()))
   hashMonth(exp,list)
 
 def hashMonth(exp, list):
@@ -107,9 +107,24 @@ def addExpense():
     hash(e1)
 
 #prompts user to track an expense
+monthDict = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December"
+}
 def trackExpense():
-  month = input("\nwhat month of expense would you like to see? (numbers EX. January = 1)\n")
-  intMonth = int(month)
+  print("\nwhat month of expense would you like to see?\n" + sep)
+  print(monthDict)
+  '''intMonth = int(month)
   if intMonth == 1:
     trackExpenseMonth(expenses1)
   if intMonth == 2:
@@ -133,7 +148,18 @@ def trackExpense():
   if intMonth == 11:
     trackExpenseMonth(expenses11)
   if intMonth == 12: 
-    trackExpenseMonth(expenses12)
+    trackExpenseMonth(expenses12)'''
+  while(True):
+    month = input()
+    try:
+      if (int(month) <=12) and (int(month) > 0):
+        list = listDict.get(int(month))
+        break
+      else:
+        print("Please type in a valid number")
+    except:
+      print("Please type in a number")
+  trackExpenseMonth(list)
   
 def trackExpenseMonth(list):
   #while (True):
