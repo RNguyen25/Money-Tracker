@@ -56,7 +56,8 @@ categoryDict = {
   3: "Health",
   4: "Groceries",
   5: "Clothes",
-  6: "Misc."
+  6: "Misc.",
+  7: "Technology"
 }
 def addExpense():
  # while (True):
@@ -73,7 +74,7 @@ def addExpense():
         if(cat!=None):
           break
         else:
-          print("Please put in a number 1-6")
+          print("Please put in a number 1-7")
       except:
         print("Please put in a number")
     e1 = expense(da,n, c, cat)
@@ -123,6 +124,3 @@ def trackExpenseMonth(list):
           break
       except:
         break
-    #done = input("are you done (yes)\n")
-    #if (done == "yes"):
-     # break
