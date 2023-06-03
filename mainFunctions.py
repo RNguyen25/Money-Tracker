@@ -119,3 +119,52 @@ def trackExpense():
         break
     except:
       break
+
+#Option to remove an expense
+def removeExpense():
+  print("\nWhat is the month of your expense that you wish to remove?\n" + sep)
+  print(monthDict)
+  while(True):
+    month = input()
+    try:
+      if (int(month) <=12) and (int(month) > 0):
+        list = listDict.get(int(month))
+        break
+      else:
+        print("Please type in a valid number")
+    except:
+      print("Please type in a number")
+  i = input("\nWhat day is the expense on?\n")
+  curr = list[int(i)]
+  while (True):
+    print(curr)
+    try:
+      if curr.getNext() != "":
+        curr = curr.getNext()
+      else:
+        break
+    except:
+      break
+  name = input("What is the name of the expense you wish to remove?")
+  curr = list[int(i)]
+  if(curr == None):
+    print("This input is invalid")
+    return None
+  #loops through linked list to find a match and remove
+  prev = curr
+  #instance where it is the only expense of the day
+  if curr.getName() == name and (curr.getNext()==""):
+    list[int(i)]==None
+  #instance at the end of the linked list
+  while(True):
+    if curr.getName() == name:
+
+
+
+  
+
+#Option to edit an expense
+#def editExpense():
+
+#function to display category graph for a day
+#function to display category graph for a month
